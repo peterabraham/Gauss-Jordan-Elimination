@@ -25,18 +25,18 @@ int main()
     
     cout << "Please enter the coefficients:" << endl;
     //Inputs the coefficients of the matrix
-    for(i = 0; i < n; i++)
+    for(i = 0; i < n; ++i)
     {
-        for(j = 0; j < n; j++)
+        for(j = 0; j < n; ++j)
         {
             cin >> mat[i][j];
         }
     }
     
     cout << endl << "Input matrix:" << endl;
-    for (i = 0; i < n; i++)
+    for (i = 0; i < n; ++i)
     {
-        for (j = 0; j < n; j++)
+        for (j = 0; j < n; ++j)
         {
             cout << mat[i][j] << "\t";
         }
@@ -45,9 +45,9 @@ int main()
     cout << endl;
     
     // Initializing Right-hand side to identity matrix
-    for(i = 0; i < n; i++)
+    for(i = 0; i < n; ++i)
     {
-        for(j = 0; j < 2*n; j++)
+        for(j = 0; j < 2*n; ++j)
         {
             if(j == (i+n))
             {
@@ -57,11 +57,11 @@ int main()
     }
     
     // Partial pivoting
-    for(i = n; i > 1; i--)
+    for(i = n; i > 1; --i)
     {
         if(mat[i-1][1] < mat[i][1])
         {
-            for(j = 0; j < 2*n+1; j++)
+            for(j = 0; j < 2*n+1; ++j)
             {
                 d = mat[i][j];
                 mat[i][j] = mat[i-1][j];
@@ -73,9 +73,9 @@ int main()
     
     // Pivoted output
     cout << "Pivoted output: " << endl;
-    for(i = 0; i < n; i++)
+    for(i = 0; i < n; ++i)
     {
-        for(j = 0; j < 2*n; j++)
+        for(j = 0; j < 2*n; ++j)
         {
             cout << mat[i][j] << "\t";
         }
@@ -84,14 +84,14 @@ int main()
     cout << endl;
     
     // Reducing To Diagonal Matrix
-    for(i = 0; i < n; i++)
+    for(i = 0; i < n; ++i)
     {
-        for(j = 0; j < 2*n; j++)
+        for(j = 0; j < 2*n; ++j)
         {
             if(j != i)
             {
                 d = mat[j][i] / mat[i][i];
-                for(k = 0; k < n*2; k++)
+                for(k = 0; k < n*2; ++k)
                 {
                     mat[j][k] -= mat[i][k]*d;
                 }
@@ -101,10 +101,10 @@ int main()
     cout << endl;
     
     // Reducing To Unit Matrix
-    for(i = 0; i < n; i++)
+    for(i = 0; i < n; ++i)
     {
         d = mat[i][i];
-        for(j = 0; j < 2*n; j++)
+        for(j = 0; j < 2*n; ++j)
         {
             mat[i][j] = mat[i][j]/d;
         }
@@ -112,9 +112,9 @@ int main()
     
     // Print inverse of the input matrix
     cout<<"Inverse matrix:" << endl;
-    for(i=0; i < n; i++)
+    for(i=0; i < n; ++i)
     {
-        for(j = n; j < 2*n; j++)
+        for(j = n; j < 2*n; ++j)
         {
             cout << mat[i][j] << "\t";
         }
