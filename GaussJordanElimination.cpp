@@ -1,4 +1,4 @@
-/*
+/**
  * Inverse of a Matrix
  * Gauss-Jordan Elimination
  **/
