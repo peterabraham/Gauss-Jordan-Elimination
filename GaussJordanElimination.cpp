@@ -91,7 +91,7 @@ int main() {
         }
     }
     
-    // Inverse of the input matrix
+    // Print inverse of the input matrix
     cout<<"Inverse matrix:" << endl;
     for(i=0; i < n; i++) {
         for(j = n; j < 2*n; j++) {
