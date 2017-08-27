@@ -61,7 +61,7 @@ int main()
     {
         if(mat[i-1][1] < mat[i][1])
         {
-            for(j = 0; j < 2*n+1; ++j)
+            for(j = 0; j < 2*n; ++j)
             {
                 d = mat[i][j];
                 mat[i][j] = mat[i-1][j];
